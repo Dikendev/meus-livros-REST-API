@@ -29,6 +29,9 @@ public class Book {
     @NotBlank(message = "Author is required")
     private String author;
     private String publishedBy;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "language_id")
+    private BookLanguage language;
     private Date publishedDate;
     private String edition;
     @Column(columnDefinition = "MEDIUMTEXT")
