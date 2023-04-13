@@ -1,4 +1,4 @@
-package com.project.meuslivros.books.entity.DTOs;
+package com.project.meuslivros.books.DTOs;
 
 import jakarta.persistence.JoinColumn;
 import jakarta.validation.constraints.NotBlank;
