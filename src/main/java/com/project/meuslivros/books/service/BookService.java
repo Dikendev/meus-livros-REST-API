@@ -28,7 +28,13 @@ public class BookService {
     }
 
     public void updateBook(UUID id, Book book) {
+        findOrThrow(id);
         repository.save(book);
+    }
+
+    public void deleteBookById(UUID id) {
+        findOrThrow(id);
+        repository.deleteById(id);
     }
 
     public Book findOrThrow(final UUID id) {
