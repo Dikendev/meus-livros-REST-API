@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Table
+@Table(name="book")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,21 +26,17 @@ public class Book {
     @NotBlank(message = "Title is required")
     private String title;
     private String subTitle;
-    @NotBlank(message = "Author is required")
-    private String author;
-    private String publishedBy;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "language_id")
-    private BookLanguage language;
-    private Date publishedDate;
-    private String edition;
-    @Column(columnDefinition = "MEDIUMTEXT")
-    private String bookImageUrl;
+    private Language language;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
+    @JoinColumn(name = "category_id")
     private Category category;
     private String createAt = new SimpleDateFormat(
             "dd-MM-yyyy HH:mm:ss z")
             .format(new Date());
 
+    private Date publicationDate;
 }
