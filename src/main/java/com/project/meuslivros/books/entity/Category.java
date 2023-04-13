@@ -11,9 +11,9 @@ import java.util.UUID;
 
 @Entity
 @Data
-@Table(name = "categories")
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "categories")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","books"})
 public class Category {
 
