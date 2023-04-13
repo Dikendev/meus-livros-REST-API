@@ -11,8 +11,8 @@ import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Table(name="book")
 @Data
+@Table(name="book")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Book {
@@ -34,6 +34,10 @@ public class Book {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "publisher_id")
+    private Publisher publisher;
 
     private String createAt = new SimpleDateFormat(
             "dd-MM-yyyy HH:mm:ss z")
