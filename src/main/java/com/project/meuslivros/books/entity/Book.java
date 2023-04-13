@@ -34,9 +34,9 @@ public class Book {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
+
     private String createAt = new SimpleDateFormat(
             "dd-MM-yyyy HH:mm:ss z")
             .format(new Date());
 
-    private Date publicationDate;
 }
