@@ -1,7 +1,7 @@
 package com.project.meuslivros.books.controller;
 
 import com.project.meuslivros.books.entity.Book;
-import com.project.meuslivros.books.entity.DTOs.BookDto;
+import com.project.meuslivros.books.DTOs.BookDto;
 import com.project.meuslivros.books.service.BookService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
