@@ -35,9 +35,9 @@ public class Book {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "publisher_id")
-    private Publisher publisher;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "publisher_id")
+//    private Publisher publisher;
 
     private String createAt = new SimpleDateFormat(
             "dd-MM-yyyy HH:mm:ss z")
