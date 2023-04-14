@@ -28,7 +28,13 @@ public class LanguageService {
     }
 
     public void updateLanguage(UUID id, Language language) {
+        findOrThrow(id);
         repository.save(language);
+    }
+
+    public void deleteLanguage(UUID id) {
+        findOrThrow(id);
+        repository.deleteById(id);
     }
 
     public Language findOrThrow(final UUID id) {
