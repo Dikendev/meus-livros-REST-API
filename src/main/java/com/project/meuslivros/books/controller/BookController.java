@@ -20,7 +20,7 @@ import java.util.stream.StreamSupport;
 @AllArgsConstructor
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("api/books")
+@RequestMapping("api/v1/books")
 public class BookController {
 
     private final BookService service;
@@ -45,7 +45,7 @@ public class BookController {
     }
 
     @PostMapping
-    public BookDto postBook(@Valid @RequestBody BookDto bookDto) {
+    public BookDto addBook(@Valid @RequestBody BookDto bookDto) {
         var entity = convertToEntity(bookDto);
         var book = service.addBook(entity);
 
@@ -66,7 +66,7 @@ public class BookController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void>deleteBook(@PathVariable("id" ) UUID id) {
         try {
-            service.deleteBookById(id);
+            service.deleteBook(id);
             return ResponseEntity.noContent().build();
         } catch (EntityNotFoundException e) {
             return ResponseEntity.notFound().build();
