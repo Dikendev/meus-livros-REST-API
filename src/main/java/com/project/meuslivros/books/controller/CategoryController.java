@@ -2,9 +2,13 @@ package com.project.meuslivros.books.controller;
 
 import com.project.meuslivros.books.entity.Category;
 import com.project.meuslivros.books.service.CategoryService;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.UUID;
 
@@ -30,6 +34,18 @@ public class CategoryController {
     @PostMapping
     public Category addCategory(@Valid @RequestBody Category category) {
         return service.addCategory(category);
+    }
+
+    @PutMapping("/{id}")
+    public void updateCategory(@PathVariable("id") UUID id,
+                               @Valid @RequestBody Category category) {
+        if (!id.equals(category.getId())) throw new
+                ResponseStatusException(
+                HttpStatus.BAD_REQUEST,
+                "id does not match."
+        );
+
+        service.updateCategory(id, category);
     }
 
 }
