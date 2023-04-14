@@ -28,7 +28,13 @@ public class CategoryService {
     }
 
     public void updateCategory(UUID id, Category category) {
+        findOrThrow(id);
         repository.save(category);
+    }
+
+    public void deleteCategory(UUID id) {
+        findOrThrow(id);
+        repository.deleteById(id);
     }
 
     public Category findOrThrow(final UUID id) {
