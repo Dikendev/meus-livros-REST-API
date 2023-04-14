@@ -48,4 +48,16 @@ public class CategoryController {
         service.updateCategory(id, category);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void>deleteCategory(
+            @PathVariable("id") UUID id) {
+        try {
+            service.deleteCategory(id);
+            return ResponseEntity.noContent().build();
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 }
