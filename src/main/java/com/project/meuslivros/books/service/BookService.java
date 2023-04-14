@@ -32,7 +32,7 @@ public class BookService {
         repository.save(book);
     }
 
-    public void deleteBookById(UUID id) {
+    public void deleteBook(UUID id) {
         findOrThrow(id);
         repository.deleteById(id);
     }
