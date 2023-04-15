@@ -1,9 +1,8 @@
 package com.project.meuslivros.books.DTOs;
 
-import javax.persistence.JoinColumn;
-import javax.validation.constraints.NotBlank;
+import jakarta.persistence.JoinColumn;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-import org.springframework.data.redis.core.RedisHash;
 
 import java.util.UUID;
 
