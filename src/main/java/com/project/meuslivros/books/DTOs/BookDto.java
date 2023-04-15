@@ -1,7 +1,7 @@
 package com.project.meuslivros.books.DTOs;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.validation.constraints.NotBlank;
+import javax.persistence.JoinColumn;
+import javax.validation.constraints.NotBlank;
 import lombok.*;
 import org.springframework.data.redis.core.RedisHash;
 
@@ -10,7 +10,6 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@RedisHash("Book")
 public class BookDto {
 
     private UUID Id;
