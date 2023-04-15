@@ -1,5 +1,6 @@
 package com.project.meuslivros.books.entity;
 
+import com.project.meuslivros.books.model.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +9,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.UUID;
 
 
 @Entity
@@ -16,13 +16,7 @@ import java.util.UUID;
 @Table(name="book")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO,
-            generator = "UUID")
-    @Column(nullable = false, updatable = false)
-    private UUID id;
+public class Book extends BaseEntity {
 
     @NotBlank(message = "Title is required")
     private String title;
