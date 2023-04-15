@@ -3,10 +3,14 @@ package com.project.meuslivros.books.controller;
 import com.project.meuslivros.books.entity.Book;
 import com.project.meuslivros.books.DTOs.BookDto;
 import com.project.meuslivros.books.service.BookService;
-import jakarta.persistence.EntityNotFoundException;
-import jakarta.validation.Valid;
+import javax.persistence.EntityNotFoundException;
+import javax.validation.Valid;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +21,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+@Slf4j
 @AllArgsConstructor
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -25,9 +30,17 @@ public class BookController {
 
     private final BookService service;
     private final ModelMapper mapper;
+    private static final Logger LOGGER = LoggerFactory.getLogger(BookController.class);
 
     @GetMapping("/getall")
-    public List<BookDto> getBook() {
+    public List<BookDto> getBook(Pageable pageable) {
+        int toSkip = pageable.getPageSize() * pageable.getPageNumber();
+
+        //        SLJF4J
+        LOGGER.info("Using SLF4J: Getting book list - getBook()");
+//        LOMBOK SLF4J
+        log.info("Using SLF4J lombok: Getting book list - getBook()");
+
         var bookList = StreamSupport
                 .stream(service.findAllBooks()
                         .spliterator(),
