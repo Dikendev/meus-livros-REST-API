@@ -1,0 +1,25 @@
+2023-04-14 23:56:50,428 INFO o.s.b.StartupInfoLogger [restartedMain] Starting MyBooksRestApiApplication using Java 19.0.2 on Diegos-MacBook-Air.local with PID 3102 (/Users/diken/Documents/intellijDir/meus-livros/target/classes started by diken in /Users/diken/Documents/intellijDir/meus-livros)
+2023-04-14 23:56:50,433 INFO o.s.b.SpringApplication [restartedMain] The following profiles are active: test
+2023-04-14 23:56:50,459 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-14 23:56:50,459 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-14 23:56:50,967 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 23:56:50,968 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-14 23:56:51,072 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 98 ms. Found 3 JPA repository interfaces.
+2023-04-14 23:56:51,085 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-04-14 23:56:51,086 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-04-14 23:56:51,104 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 11 ms. Found 3 Redis repository interfaces.
+2023-04-14 23:56:51,482 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-04-14 23:56:51,552 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1093 ms
+2023-04-14 23:56:51,574 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-04-14 23:56:51,681 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-04-14 23:56:51,690 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:321db89d-0ca4-41d0-8a9d-3470e999f7ee'
+2023-04-14 23:56:51,776 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-14 23:56:51,809 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.3.Final
+2023-04-14 23:56:51,904 INFO o.h.a.c.r.j.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-14 23:56:51,974 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-14 23:56:52,349 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-14 23:56:52,354 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-14 23:56:52,513 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-04-14 23:56:53,235 WARN o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [restartedMain] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-04-14 23:56:53,379 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-14 23:56:53,386 INFO o.s.b.StartupInfoLogger [restartedMain] Started MyBooksRestApiApplication in 3.263 seconds (JVM running for 9.066)
