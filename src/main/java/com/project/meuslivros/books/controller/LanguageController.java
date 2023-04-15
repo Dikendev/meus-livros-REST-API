@@ -2,7 +2,7 @@ package com.project.meuslivros.books.controller;
 
 import com.project.meuslivros.books.entity.Language;
 import com.project.meuslivros.books.service.LanguageService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
