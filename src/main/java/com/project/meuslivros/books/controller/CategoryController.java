@@ -2,8 +2,8 @@ package com.project.meuslivros.books.controller;
 
 import com.project.meuslivros.books.entity.Category;
 import com.project.meuslivros.books.service.CategoryService;
-import jakarta.persistence.EntityNotFoundException;
-import jakarta.validation.Valid;
+import javax.persistence.EntityNotFoundException;
+import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
