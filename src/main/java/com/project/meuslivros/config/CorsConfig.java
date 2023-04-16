@@ -42,5 +42,11 @@ public class CorsConfig {
                 )
         );
 
+        corsConfiguration.setAllowedMethods(
+                Arrays.asList(
+                        "GET", "POST", "PUT", "DELETE", "OPTIONS"
+                )
+        );
+
     }
 }
