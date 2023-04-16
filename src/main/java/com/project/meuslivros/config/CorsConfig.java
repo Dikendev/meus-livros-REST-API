@@ -30,5 +30,17 @@ public class CorsConfig {
                 )
         );
 
+        corsConfiguration.setExposedHeaders(
+                Arrays.asList(
+                        "Origin",
+                        "Content-Type",
+                        "Accept",
+                        "Authorization",
+                        "Access-Control-Allow-Origin",
+                        "Access-Control-Allow-Origin",
+                        "Access-Control-Allow-Credentials"
+                )
+        );
+
     }
 }
