@@ -1,4 +1,4 @@
-2023-04-15 23:34:30,473 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+2023-04-16 00:00:07,503 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
 java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
 ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@354a4f41 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
 ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@226d5d94 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
@@ -35,10 +35,10 @@ ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@226d5d94 - failed
 	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:187)
 	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
 	... 22 common frames omitted
-2023-04-15 23:36:00,339 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+2023-04-16 00:01:14,630 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
 java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@354a4f41 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@226d5d94 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@5102362c - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@7cc8fbeb - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
 	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
 	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
 	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
@@ -63,8 +63,8 @@ ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@226d5d94 - failed
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
 Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@354a4f41 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@226d5d94 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@5102362c - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@7cc8fbeb - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
 	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:260)
 	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:247)
 	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
@@ -72,188 +72,86 @@ ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@226d5d94 - failed
 	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:187)
 	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
 	... 22 common frames omitted
-2023-04-15 23:43:17,480 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@354a4f41 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@226d5d94 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
-	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:305)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
-	at com.project.meuslivros.MyBooksRestApiApplication.main(MyBooksRestApiApplication.java:10)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@354a4f41 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@226d5d94 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:260)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:247)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:187)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
-	... 22 common frames omitted
-2023-04-15 23:46:40,915 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@1b05bf47 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@74b07889 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
-	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:305)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
-	at com.project.meuslivros.MyBooksRestApiApplication.main(MyBooksRestApiApplication.java:10)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@1b05bf47 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@74b07889 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:260)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:247)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:187)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
-	... 22 common frames omitted
-2023-04-15 23:46:55,082 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@1b05bf47 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@74b07889 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
-	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:305)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
-	at com.project.meuslivros.MyBooksRestApiApplication.main(MyBooksRestApiApplication.java:10)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@1b05bf47 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@74b07889 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:260)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:247)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:187)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
-	... 22 common frames omitted
-2023-04-15 23:51:13,485 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@48813375 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@52e2f45f - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
-	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:305)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
-	at com.project.meuslivros.MyBooksRestApiApplication.main(MyBooksRestApiApplication.java:10)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@48813375 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@52e2f45f - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:260)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:247)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:187)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
-	... 22 common frames omitted
-2023-04-15 23:54:11,186 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@354a4f41 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@226d5d94 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
-	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:305)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
-	at com.project.meuslivros.MyBooksRestApiApplication.main(MyBooksRestApiApplication.java:10)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@354a4f41 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@226d5d94 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:260)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:247)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:187)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
-	... 22 common frames omitted
+2023-04-16 00:02:00,271 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.0.Final
+2023-04-16 00:02:00,294 INFO o.s.b.StartupInfoLogger [restartedMain] Starting MyBooksRestApiApplication using Java 19.0.2 with PID 1855 (/Users/diken/Documents/intellijDir/meus-livros/target/classes started by diken in /Users/diken/Documents/intellijDir/meus-livros)
+2023-04-16 00:02:00,294 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "test"
+2023-04-16 00:02:00,314 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-16 00:02:00,314 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-16 00:02:00,678 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-16 00:02:00,704 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 22 ms. Found 3 JPA repository interfaces.
+2023-04-16 00:02:01,008 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-04-16 00:02:01,013 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-16 00:02:01,013 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-04-16 00:02:01,013 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-16 00:02:01,040 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-04-16 00:02:01,041 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 727 ms
+2023-04-16 00:02:01,060 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-04-16 00:02:01,151 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:a60d0a86-16b9-4319-b836-b6def0de91b6 user=SA
+2023-04-16 00:02:01,152 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-04-16 00:02:01,157 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:a60d0a86-16b9-4319-b836-b6def0de91b6'
+2023-04-16 00:02:01,221 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-16 00:02:01,243 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.2.0.Final
+2023-04-16 00:02:01,244 INFO o.h.c.Environment [restartedMain] HHH000406: Using bytecode reflection optimizer
+2023-04-16 00:02:01,296 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-04-16 00:02:01,350 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-04-16 00:02:01,372 INFO o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-16 00:02:01,464 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-04-16 00:02:01,762 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-16 00:02:01,784 INFO o.h.t.s.i.e.GenerationTargetToDatabase [restartedMain] HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
+2023-04-16 00:02:01,785 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16 00:02:02,415 WARN o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [restartedMain] Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-04-16 00:02:02,471 WARN o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [restartedMain] 
+
+Using generated security password: 721416d4-b039-44aa-b7b2-852cee4b1c26
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-04-16 00:02:02,517 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1b744cff, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66efcce5, org.springframework.security.web.context.SecurityContextHolderFilter@4d1c9e0, org.springframework.security.web.header.HeaderWriterFilter@2e2c64ae, org.springframework.security.web.csrf.CsrfFilter@6bc8030c, org.springframework.security.web.authentication.logout.LogoutFilter@1f866720, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@571c2543, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@73d70652, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4b9dc70e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@e0e7d01, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f1531bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@664c66b3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e531a16, org.springframework.security.web.access.ExceptionTranslationFilter@68e5f59a, org.springframework.security.web.access.intercept.AuthorizationFilter@6a98e18f]
+2023-04-16 00:02:02,532 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-04-16 00:02:02,537 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-04-16 00:02:02,545 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-16 00:02:02,552 INFO o.s.b.StartupInfoLogger [restartedMain] Started MyBooksRestApiApplication in 2.509 seconds (process running for 2.77)
+2023-04-16 00:04:22,924 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16 00:04:22,925 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-04-16 00:04:23,139 WARN o.s.b.f.s.DisposableBeanAdapter [SpringApplicationShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-04-16 00:04:23,140 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-16 00:04:23,143 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-16 00:04:24,598 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.0.Final
+2023-04-16 00:04:24,623 INFO o.s.b.StartupInfoLogger [restartedMain] Starting MyBooksRestApiApplication using Java 19.0.2 with PID 1867 (/Users/diken/Documents/intellijDir/meus-livros/target/classes started by diken in /Users/diken/Documents/intellijDir/meus-livros)
+2023-04-16 00:04:24,624 INFO o.s.b.SpringApplication [restartedMain] The following 1 profile is active: "test"
+2023-04-16 00:04:24,647 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-16 00:04:24,647 INFO o.s.b.l.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-16 00:04:24,994 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-16 00:04:25,022 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
+2023-04-16 00:04:25,325 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2023-04-16 00:04:25,329 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-16 00:04:25,330 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2023-04-16 00:04:25,330 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-16 00:04:25,357 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-04-16 00:04:25,358 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 710 ms
+2023-04-16 00:04:25,371 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-04-16 00:04:25,458 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:f205b50b-4a51-4f18-a7c5-6890c7fcf580 user=SA
+2023-04-16 00:04:25,459 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-04-16 00:04:25,464 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:f205b50b-4a51-4f18-a7c5-6890c7fcf580'
+2023-04-16 00:04:25,527 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-16 00:04:25,551 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.2.0.Final
+2023-04-16 00:04:25,553 INFO o.h.c.Environment [restartedMain] HHH000406: Using bytecode reflection optimizer
+2023-04-16 00:04:25,605 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-04-16 00:04:25,661 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-04-16 00:04:25,682 INFO o.h.e.j.d.i.DialectFactoryImpl [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-16 00:04:25,772 INFO o.h.b.i.BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
+2023-04-16 00:04:26,078 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-16 00:04:26,099 INFO o.h.t.s.i.e.GenerationTargetToDatabase [restartedMain] HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
+2023-04-16 00:04:26,100 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-16 00:04:26,861 WARN o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [restartedMain] Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-04-16 00:04:26,916 WARN o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [restartedMain] 
+
+Using generated security password: e2bf4bd0-64ef-46e9-a98f-9173c190f7ae
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-04-16 00:04:26,960 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@440d068c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64633b2, org.springframework.security.web.context.SecurityContextHolderFilter@654e85f9, org.springframework.security.web.header.HeaderWriterFilter@656e9d6a, org.springframework.security.web.csrf.CsrfFilter@213f1796, org.springframework.security.web.authentication.logout.LogoutFilter@2a8b6ea6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2cd5e287, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@38bf78b7, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5a6c056e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@de9ec0b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b402da2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@492b01be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4fada60c, org.springframework.security.web.access.ExceptionTranslationFilter@5b31f2c, org.springframework.security.web.access.intercept.AuthorizationFilter@781446ce]
+2023-04-16 00:04:26,980 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-04-16 00:04:26,987 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2023-04-16 00:04:26,995 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-16 00:04:27,002 INFO o.s.b.StartupInfoLogger [restartedMain] Started MyBooksRestApiApplication in 2.546 seconds (process running for 2.884)
