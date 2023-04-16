@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -24,14 +25,16 @@ import java.util.stream.StreamSupport;
 @Slf4j
 @AllArgsConstructor
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(allowedHeaders = "Content-type")
 @RequestMapping("api/v1/books")
+@PreAuthorize("isAuthenticated()")
 public class BookController {
 
     private final BookService service;
     private final ModelMapper mapper;
     private static final Logger LOGGER = LoggerFactory.getLogger(BookController.class);
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/getall")
     public List<BookDto> getBook(Pageable pageable) {
         int toSkip = pageable.getPageSize() * pageable.getPageNumber();
