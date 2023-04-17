@@ -40,4 +40,10 @@ public class UserController {
         return userService.createUser(userDto, userDto.getPassword());
     }
 
+    @PutMapping("/api/v1/users/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void putUser(@PathVariable("id") UUID id, @Valid @RequestBody UserDto userDto)
+            throws NoSuchAlgorithmException {
+        userService.updateUser(id, userDto, userDto.getPassword());
+    }
 }
