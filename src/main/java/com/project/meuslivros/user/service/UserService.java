@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.security.SecureRandom;
 import java.util.UUID;
 
 @Service
@@ -16,6 +17,14 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final ModelMapper mapper;
+
+    private byte[] createSalt() {
+        var random = new SecureRandom();
+        var salt = new byte[128];
+        random.nextBytes(salt);
+
+        return salt;
+    }
 
     private UserDto convertToDto(UserEntity entity) {
         return mapper.map(entity, UserDto.class);
