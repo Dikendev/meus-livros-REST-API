@@ -8,6 +8,9 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.UUID;
 
@@ -24,6 +27,16 @@ public class UserService {
         random.nextBytes(salt);
 
         return salt;
+    }
+
+    private byte[] createPasswordHash(String password, byte[] salt)
+            throws NoSuchAlgorithmException {
+
+        var md = MessageDigest.getInstance("SHA-512");
+        md.update(salt);
+
+        return md.digest(password.getBytes(StandardCharsets.UTF_8)
+        );
     }
 
     private UserDto convertToDto(UserEntity entity) {
