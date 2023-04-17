@@ -113,6 +113,10 @@ public class UserService {
         return convertToDto(user);
     }
 
+    public UserEntity searchByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
     private UserDto convertToDto(UserEntity entity) {
         return mapper.map(entity, UserDto.class);
     }
