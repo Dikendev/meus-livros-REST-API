@@ -85,6 +85,11 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public void removeUserById(UUID id) {
+        findOrThrow(id);
+        userRepository.deleteById(id);
+    }
+
     private UserDto convertToDto(UserEntity entity) {
         return mapper.map(entity, UserDto.class);
     }
