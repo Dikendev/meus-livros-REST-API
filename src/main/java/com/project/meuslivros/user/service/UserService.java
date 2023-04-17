@@ -103,6 +103,16 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public UserDto findUserById(final UUID id) {
+        var user = userRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException(
+                        "User by id " + id + " was not found")
+                );
+
+        return convertToDto(user);
+    }
+
     private UserDto convertToDto(UserEntity entity) {
         return mapper.map(entity, UserDto.class);
     }
