@@ -22,4 +22,9 @@ public class UserController {
         return userService.findAllUsers();
     }
 
+    @GetMapping("/api/v1/users/{id}")
+    public UserDto getUserById(@PathVariable("id")UUID id) {
+        return userService.findUserById(id);
+    }
+
 }
