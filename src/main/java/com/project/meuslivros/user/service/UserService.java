@@ -65,6 +65,26 @@ public class UserService {
         return convertToDto(user);
     }
 
+    public void updateUser(UUID id, UserDto userDto, String password)
+            throws NoSuchAlgorithmException {
+
+        var user = findOrThrow(id);
+        var userParam = convertToEntity(userDto);
+
+        user.setEmail(userParam.getEmail());
+        user.setMobileNumber(userParam.getMobileNumber());
+
+        if (!password.isBlank()) {
+            byte[] salt = createSalt();
+            byte[] hashedPassword = createPasswordHash(password, salt);
+
+            user.setStoredSalt(salt);
+            user.setStoredHash(hashedPassword);
+        }
+
+        userRepository.save(user);
+    }
+
     private UserDto convertToDto(UserEntity entity) {
         return mapper.map(entity, UserDto.class);
     }
