@@ -6,6 +6,7 @@ import com.project.meuslivros.user.data.UserDto;
 import com.project.meuslivros.user.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
@@ -37,6 +38,31 @@ public class UserService {
 
         return md.digest(password.getBytes(StandardCharsets.UTF_8)
         );
+    }
+
+    public UserDto createUser(UserDto userDto, String password)
+            throws NoSuchAlgorithmException {
+
+        var user = convertToEntity(userDto);
+
+        if (password.isBlank()) throw new IllegalArgumentException(
+                "Password is required."
+        );
+
+        var existEmail = userRepository.selectExistsEmail(user.getEmail());
+        if (existEmail) throw new BadCredentialsException(
+                "Email " + user.getEmail() + "taken"
+        );
+
+        byte [] salt = createSalt();
+        byte [] hashedPassword = createPasswordHash(password, salt);
+
+        user.setStoredSalt(salt);
+        user.setStoredHash(hashedPassword);
+
+        userRepository.save(user);
+
+        return convertToDto(user);
     }
 
     private UserDto convertToDto(UserEntity entity) {
