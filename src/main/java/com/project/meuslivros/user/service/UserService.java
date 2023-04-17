@@ -13,7 +13,10 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -88,6 +91,16 @@ public class UserService {
     public void removeUserById(UUID id) {
         findOrThrow(id);
         userRepository.deleteById(id);
+    }
+
+    public List<UserDto> findAllUsers() {
+        var userEntityList =
+                new ArrayList<>(userRepository.findAll());
+
+        return userEntityList
+                .stream()
+                .map(this::convertToDto)
+                .collect(Collectors.toList());
     }
 
     private UserDto convertToDto(UserEntity entity) {
