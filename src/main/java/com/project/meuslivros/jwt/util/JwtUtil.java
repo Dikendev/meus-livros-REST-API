@@ -1,5 +1,6 @@
 package com.project.meuslivros.jwt.util;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
 @Service
 public class JwtUtil {
@@ -41,4 +43,17 @@ public class JwtUtil {
         return createToken(claims, userDetails.getUsername());
     }
 
+    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
+        final Claims claims = extratAllClaims(token);
+        return claimsResolver.apply(claims);
+    }
+
+    private Claims extratAllClaims(String token) {
+        return Jwts
+                .parserBuilder()
+                .setSigningKey(SECRET_KEY)
+                .build()
+                .parseClaimsJwt(token)
+                .getBody();
+    }
 }
