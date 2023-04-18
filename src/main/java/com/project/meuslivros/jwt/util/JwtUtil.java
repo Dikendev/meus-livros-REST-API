@@ -65,4 +65,8 @@ public class JwtUtil {
         return extractExpiration(token).before(new Date());
     }
 
+    public String extractUsername(String token) {
+        return extractClaim(token, Claims::getSubject);
+    }
+
 }
