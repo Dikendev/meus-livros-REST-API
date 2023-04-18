@@ -1,8 +1,10 @@
 package com.project.meuslivros.jwt.service;
 
 import com.project.meuslivros.jwt.models.UserPrincipal;
+import com.project.meuslivros.user.entity.UserEntity;
 import com.project.meuslivros.user.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -55,5 +57,26 @@ public class ApplicationUserDetailsService implements UserDetailsService {
         }
 
         return MessageDigest.isEqual(computedHash, storedHash);
+    }
+
+    public UserEntity authenticate(String email, String password)
+            throws NoSuchAlgorithmException {
+        if (email.isEmpty() || password.isEmpty())
+            throw new BadCredentialsException("Unauthorized");
+
+        var userEntity = userService.searchByEmail(email);
+
+        if (userEntity == null)
+            throw new BadCredentialsException("Unauthorized");
+
+        var verified = verifyPasswordHash(
+                password,
+                userEntity.getStoredHash(),
+                userEntity.getStoredSalt()
+        );
+
+        if (!verified) throw new BadCredentialsException("Unauthorized");
+
+        return userEntity;
     }
 }
