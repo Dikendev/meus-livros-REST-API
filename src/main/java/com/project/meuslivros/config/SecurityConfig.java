@@ -26,7 +26,6 @@ public class SecurityConfig {
     private final ApplicationUserDetailsService userDetailsService;
     private final JwtRequestFilter jwtRequestFilter;
 
-    @Bean
     protected void configure(AuthenticationManagerBuilder auth)
         throws Exception {
             auth.userDetailsService(userDetailsService);
