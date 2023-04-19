@@ -48,6 +48,7 @@ public class BookController {
                 .stream(service.findAllBooks()
                         .spliterator(),
                         false)
+                .skip(toSkip).limit(pageable.getPageSize())
                 .collect(Collectors.toList());
         return bookList
                 .stream()
