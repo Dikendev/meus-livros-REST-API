@@ -21,11 +21,6 @@ public class JwtUtil {
     @Value("${jwt.secret}")
     private String SECRET_KEY;
 
-    private SecretKey getSecretKey() {
-        return new SecretKeySpec(
-                SECRET_KEY.getBytes(StandardCharsets.UTF_8),
-                SignatureAlgorithm.HS256.getJcaName());
-    }
 
     private String createToken(Map<String,Object> claims, String subject) {
        return Jwts
@@ -34,7 +29,7 @@ public class JwtUtil {
                .setSubject(subject)
                .setIssuedAt(new Date(System.currentTimeMillis()))
                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
-               .signWith(SignatureAlgorithm.HS256, getSecretKey())
+               .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                .compact();
     }
 
@@ -50,11 +45,11 @@ public class JwtUtil {
 
     private Claims extratAllClaims(String token) {
         return Jwts
-                .parserBuilder()
-                .setSigningKey(SECRET_KEY)
-                .build()
-                .parseClaimsJwt(token)
-                .getBody();
+            .parserBuilder()
+            .setSigningKey(SECRET_KEY)
+            .build()
+            .parseClaimsJws(token)
+            .getBody();
     }
 
     public Date extractExpiration(String token) {
