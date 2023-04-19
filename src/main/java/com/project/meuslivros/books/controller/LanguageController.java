@@ -4,6 +4,7 @@ import com.project.meuslivros.books.entity.Language;
 import com.project.meuslivros.books.service.LanguageService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.UUID;
 
 
+@Slf4j
 @RestController
 @AllArgsConstructor
 @RequestMapping("api/v1/language")
