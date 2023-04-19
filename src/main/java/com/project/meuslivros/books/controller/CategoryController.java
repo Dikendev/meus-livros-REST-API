@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -16,7 +17,8 @@ import java.util.UUID;
 @RestController
 @AllArgsConstructor
 @RequestMapping("api/v1/categories")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(allowedHeaders = "Content-type")
+@PreAuthorize("isAuthenticated()")
 public class CategoryController {
 
     private final CategoryService service;

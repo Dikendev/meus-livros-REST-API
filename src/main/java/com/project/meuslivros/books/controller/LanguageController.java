@@ -5,6 +5,7 @@ import com.project.meuslivros.books.service.LanguageService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -14,7 +15,8 @@ import java.util.UUID;
 @RestController
 @AllArgsConstructor
 @RequestMapping("api/v1/language")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(allowedHeaders = "Content-type")
+@PreAuthorize("isAuthenticated()")
 public class LanguageController {
 
     private final LanguageService service;
