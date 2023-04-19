@@ -70,9 +70,9 @@ public class ApplicationUserDetailsService implements UserDetailsService {
             throw new BadCredentialsException("Unauthorized");
 
         var verified = verifyPasswordHash(
-                password,
-                userEntity.getStoredHash(),
-                userEntity.getStoredSalt()
+            password,
+            userEntity.getStoredHash(),
+            userEntity.getStoredSalt()
         );
 
         if (!verified) throw new BadCredentialsException("Unauthorized");
