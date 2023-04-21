@@ -1,33 +1,21 @@
-2023-04-19 00:49:12,173 INFO Version [background-preinit] HV000001: Hibernate Validator 8.0.0.Final
-2023-04-19 00:49:12,194 INFO StartupInfoLogger [restartedMain] Starting MyBooksRestApiApplication using Java 19.0.2 with PID 2492 (/Users/diken/Documents/intellijDir/meus-livros/target/classes started by diken in /Users/diken/Documents/intellijDir/meus-livros)
-2023-04-19 00:49:12,195 INFO SpringApplication [restartedMain] The following 1 profile is active: "test"
-2023-04-19 00:49:12,214 INFO DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-04-19 00:49:12,215 INFO DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-04-19 00:49:12,593 INFO RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-19 00:49:12,623 INFO RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 26 ms. Found 4 JPA repository interfaces.
-2023-04-19 00:49:12,939 INFO TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
-2023-04-19 00:49:12,978 INFO ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 763 ms
-2023-04-19 00:49:13,084 INFO H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:c2598d54-503a-4e94-8c77-5297e42f8fac'
-2023-04-19 00:49:13,134 INFO LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-19 00:49:13,157 INFO Version [restartedMain] HHH000412: Hibernate ORM core version 6.2.1.Final
-2023-04-19 00:49:13,159 INFO Environment [restartedMain] HHH000406: Using bytecode reflection optimizer
-2023-04-19 00:49:13,210 INFO BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
-2023-04-19 00:49:13,275 INFO SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-04-19 00:49:13,296 INFO DialectFactoryImpl [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect, version: 2.1.214
-2023-04-19 00:49:13,383 INFO BytecodeProviderInitiator [restartedMain] HHH000021: Bytecode provider name : bytebuddy
-2023-04-19 00:49:13,694 INFO JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-19 00:49:13,713 INFO GenerationTargetToDatabase [restartedMain] HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
-2023-04-19 00:49:13,714 INFO AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-19 00:49:13,829 INFO QueryEnhancerFactory [restartedMain] Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-04-19 00:49:14,611 INFO DefaultSecurityFilterChain [restartedMain] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@18b504ec, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7367e959, org.springframework.security.web.context.SecurityContextHolderFilter@5652f5f2, org.springframework.security.web.header.HeaderWriterFilter@2cea0333, org.springframework.security.web.authentication.logout.LogoutFilter@412b1038, com.project.meuslivros.jwt.filters.JwtRequestFilter@b7ba081, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f91789, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5962fa71, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5828144a, org.springframework.security.web.session.SessionManagementFilter@5497c9f6, org.springframework.security.web.access.ExceptionTranslationFilter@4b8c21bc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@66bf871]
-2023-04-19 00:49:14,671 WARN ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration [restartedMain] Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2023-04-19 00:49:14,731 INFO OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2023-04-19 00:49:14,745 INFO TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
-2023-04-19 00:49:14,751 INFO StartupInfoLogger [restartedMain] Started MyBooksRestApiApplication in 2.776 seconds (process running for 8.236)
-2023-04-19 00:49:19,834 INFO FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-04-19 00:49:19,836 INFO FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
-2023-04-19 00:57:54,239 WARN AbstractHandlerExceptionResolver [http-nio-8080-exec-7] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.project.meuslivros.jwt.models.AuthenticationResponse com.project.meuslivros.jwt.controller.AuthenticateController.authenticate(com.project.meuslivros.jwt.models.AuthenticationRequest) throws java.lang.Exception]
-2023-04-19 00:59:25,603 WARN AbstractHandlerExceptionResolver [http-nio-8080-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.project.meuslivros.jwt.models.AuthenticationResponse com.project.meuslivros.jwt.controller.AuthenticateController.authenticate(com.project.meuslivros.jwt.models.AuthenticationRequest) throws java.lang.Exception]
-2023-04-19 01:01:31,671 INFO AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-19 01:01:31,674 INFO SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2023-04-19 01:01:31,886 WARN DisposableBeanAdapter [SpringApplicationShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+2023-04-20 23:51:30,021 INFO Version [background-preinit] HV000001: Hibernate Validator 8.0.0.Final
+2023-04-20 23:51:30,039 INFO StartupInfoLogger [main] Starting CategoryH2ServiceTest using Java 19.0.2 with PID 1246 (started by diken in /Users/diken/Documents/intellijDir/meus-livros)
+2023-04-20 23:51:30,041 INFO SpringApplication [main] The following 1 profile is active: "test"
+2023-04-20 23:51:30,200 INFO RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-20 23:51:30,269 INFO RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
+2023-04-20 23:51:30,290 INFO TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor [main] Replacing 'dataSource' DataSource bean with embedded version
+2023-04-20 23:51:30,356 INFO EmbeddedDatabaseFactory [main] Starting embedded database: url='jdbc:h2:mem:ad6c23f7-14e4-43f9-82ee-a0cbb1ac14c9;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-04-20 23:51:30,484 INFO LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-20 23:51:30,509 INFO Version [main] HHH000412: Hibernate ORM core version 6.2.1.Final
+2023-04-20 23:51:30,510 INFO Environment [main] HHH000406: Using bytecode reflection optimizer
+2023-04-20 23:51:30,563 INFO BytecodeProviderInitiator [main] HHH000021: Bytecode provider name : bytebuddy
+2023-04-20 23:51:30,614 INFO SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-04-20 23:51:30,633 INFO DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect, version: 2.1.214
+2023-04-20 23:51:30,744 INFO BytecodeProviderInitiator [main] HHH000021: Bytecode provider name : bytebuddy
+2023-04-20 23:51:31,061 INFO JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-20 23:51:31,091 INFO GenerationTargetToDatabase [main] HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
+2023-04-20 23:51:31,093 INFO AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-20 23:51:31,254 INFO QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-04-20 23:51:31,472 INFO StartupInfoLogger [main] Started CategoryH2ServiceTest in 1.632 seconds (process running for 7.227)
+2023-04-20 23:51:31,875 INFO AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-20 23:51:31,875 INFO SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
