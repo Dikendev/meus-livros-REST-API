@@ -75,4 +75,12 @@ public class LanguageH2ServiceTest {
         });
     }
 
+    @Test
+    public void shouldFindLanguageById() {
+        Language savedLanguage = service.addLanguage(language);
+
+        Language foundLanguage = service.findLanguageById(savedLanguage.getId());
+
+        assertThat(foundLanguage.getId()).isNotNull();
+    }
 }
