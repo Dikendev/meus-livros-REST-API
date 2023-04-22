@@ -8,9 +8,11 @@ import com.project.meuslivros.books.repository.CategoryRepository;
 import com.project.meuslivros.books.repository.LanguageRepository;
 import com.project.meuslivros.books.service.BookService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @DataJpaTest
 public class BookH2ServiceTest {
@@ -31,7 +33,7 @@ public class BookH2ServiceTest {
     @BeforeEach
     public void setup() {
         language.setLanguageName("English");
-        category.setCategoryName("oo");
+        category.setCategoryName("Horror");
 
         languageRepository.save(language);
         categoryRepository.save(category);
@@ -42,6 +44,17 @@ public class BookH2ServiceTest {
         book.setLanguage(language);
 
         service = new BookService(repository);
+    }
+
+    @Test
+    public void shouldFindAllBooks() {
+        service.addBook(book);
+
+        Iterable<Book> bookList = service.findAllBooks();
+
+        Book savedBook = bookList.iterator().next();
+
+        assertThat(savedBook).isNotNull();
     }
 
 }
