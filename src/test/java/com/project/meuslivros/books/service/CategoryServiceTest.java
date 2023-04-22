@@ -17,4 +17,12 @@ public class CategoryServiceTest {
     @InjectMocks
     private CategoryService serviceTest;
 
+    @Test
+    void canFindAllCategories() {
+
+        serviceTest.findAllCategory();
+
+        verify(repository).findAll();
+    }
+
 }
