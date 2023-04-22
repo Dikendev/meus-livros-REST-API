@@ -3,12 +3,15 @@ package com.project.meuslivros.books.h2.service;
 import com.project.meuslivros.books.entity.Language;
 import com.project.meuslivros.books.repository.LanguageRepository;
 import com.project.meuslivros.books.service.LanguageService;
+import com.project.meuslivros.exception.NotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DataJpaTest
 public class LanguageH2ServiceTest {
@@ -56,4 +59,20 @@ public class LanguageH2ServiceTest {
 
         assertThat(foundLanguage.getLanguageName()).isEqualTo("Portuguese");
     }
+
+    @Test
+    public void shouldDeleteLanguage() {
+        assertThrows(NotFoundException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                Language savedLanguage = service.addLanguage(language);
+
+                service.deleteLanguage(savedLanguage.getId());
+                Language foundLanguage = service.findLanguageById(savedLanguage.getId());
+
+                assertThat(foundLanguage).isNotNull();
+            }
+        });
+    }
+
 }
