@@ -10,6 +10,8 @@ import org.junit.jupiter.api.function.Executable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import java.util.UUID;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -84,5 +86,16 @@ public class CategoryH2ServiceTest {
         assertThat(foundCategory.getId()).isNotNull();
     }
 
+    @Test
+    public void shouldNotFindCategoryById() {
+        assertThrows(NotFoundException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                Category foundCategory = service.findCategoryById(UUID.randomUUID());
+
+                assertThat(foundCategory).isNotNull();
+            }
+        });
+    }
 
 }
