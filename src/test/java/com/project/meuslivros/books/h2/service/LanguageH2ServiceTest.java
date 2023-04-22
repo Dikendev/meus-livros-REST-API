@@ -46,5 +46,14 @@ public class LanguageH2ServiceTest {
         assertThat(language).isEqualTo(savedLanguage);
     }
 
+    @Test
+    public void shouldUpdateLanguage() {
+        Language savedLanguage = service.addLanguage(language);
+        savedLanguage.setLanguageName("Portuguese");
 
+        service.updateLanguage(savedLanguage.getId(), savedLanguage);
+        Language foundLanguage = service.findLanguageById(savedLanguage.getId());
+
+        assertThat(foundLanguage.getLanguageName()).isEqualTo("Portuguese");
+    }
 }
