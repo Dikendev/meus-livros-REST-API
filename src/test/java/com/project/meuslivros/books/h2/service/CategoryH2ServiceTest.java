@@ -64,4 +64,15 @@ public class CategoryH2ServiceTest {
         });
     }
 
+    @Test
+    public void shouldUpdateCategory() {
+        Category savedCategory = service.addCategory(category);
+        savedCategory.setCategoryName("Suspense");
+
+        service.updateCategory(savedCategory.getId(), savedCategory);
+        Category foundCategory = service.findCategoryById(savedCategory.getId());
+
+        assertThat(foundCategory.getCategoryName()).isEqualTo("Suspense");
+    }
+
 }
