@@ -1,4 +1,4 @@
-package com.project.meuslivros.books.h2.service;
+package com.project.meuslivros.books.h2Service;
 
 import com.project.meuslivros.books.entity.Category;
 import com.project.meuslivros.books.repository.CategoryRepository;
