@@ -14,6 +14,7 @@ import org.junit.jupiter.api.function.Executable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -100,6 +101,15 @@ public class BookH2ServiceTest {
                 assertThat(foundBook).isNotNull();
             }
         });
+    }
+
+    @Test
+    public void shouldFindBookById() {
+        Book savedBook = service.addBook(book);
+
+        Book foundBook = service.findByBookId(savedBook.getId());
+
+        assertThat(foundBook.getId()).isNotNull();
     }
 
 }
