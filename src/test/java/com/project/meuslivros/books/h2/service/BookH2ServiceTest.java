@@ -67,4 +67,21 @@ public class BookH2ServiceTest {
         assertThat(book).isEqualTo(savedBook);
     }
 
+    @Test
+    public void shouldUpdateBook() {
+        Book savedBook = service.addBook(book);
+        savedBook.setLanguage(new Language("English", null));
+        savedBook.setCategory(new Category("Programming", null));
+        savedBook.setTitle("Head First Java");
+        savedBook.setSubTitle("Java tutorial");
+
+        service.updateBook(savedBook.getId(),savedBook);
+        Book foundBook = service.findByBookId(savedBook.getId());
+
+        assertThat(foundBook.getCategory()).isEqualTo(savedBook.getCategory());
+        assertThat(foundBook.getLanguage()).isEqualTo(savedBook.getLanguage());
+        assertThat(foundBook.getTitle()).isEqualTo("Head First Java");
+        assertThat(foundBook.getSubTitle()).isEqualTo("Java tutorial");
+    }
+
 }
