@@ -7,12 +7,15 @@ import com.project.meuslivros.books.repository.BookRepository;
 import com.project.meuslivros.books.repository.CategoryRepository;
 import com.project.meuslivros.books.repository.LanguageRepository;
 import com.project.meuslivros.books.service.BookService;
+import com.project.meuslivros.exception.NotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DataJpaTest
 public class BookH2ServiceTest {
@@ -82,6 +85,21 @@ public class BookH2ServiceTest {
         assertThat(foundBook.getLanguage()).isEqualTo(savedBook.getLanguage());
         assertThat(foundBook.getTitle()).isEqualTo("Head First Java");
         assertThat(foundBook.getSubTitle()).isEqualTo("Java tutorial");
+    }
+
+    @Test
+    public void shouldDeleteBook() {
+        assertThrows(NotFoundException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                Book savedBook = service.addBook(book);
+
+                service.deleteBook(savedBook.getId());
+                Book foundBook = service.findByBookId(savedBook.getId());
+
+                assertThat(foundBook).isNotNull();
+            }
+        });
     }
 
 }
