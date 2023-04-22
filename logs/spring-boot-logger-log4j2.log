@@ -1,21 +1,21 @@
-2023-04-21 23:50:54,263 INFO Version [background-preinit] HV000001: Hibernate Validator 8.0.0.Final
-2023-04-21 23:50:54,293 INFO StartupInfoLogger [main] Starting LanguageH2ServiceTest using Java 19.0.2 with PID 3619 (started by diken in /Users/diken/Documents/intellijDir/meus-livros)
-2023-04-21 23:50:54,295 INFO SpringApplication [main] The following 1 profile is active: "test"
-2023-04-21 23:50:54,598 INFO RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-21 23:50:54,756 INFO RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 151 ms. Found 4 JPA repository interfaces.
-2023-04-21 23:50:54,798 INFO TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor [main] Replacing 'dataSource' DataSource bean with embedded version
-2023-04-21 23:50:54,916 INFO EmbeddedDatabaseFactory [main] Starting embedded database: url='jdbc:h2:mem:1181f55f-e1fd-493f-8498-ea92eedc9986;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2023-04-21 23:50:55,124 INFO LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-21 23:50:55,160 INFO Version [main] HHH000412: Hibernate ORM core version 6.2.1.Final
-2023-04-21 23:50:55,162 INFO Environment [main] HHH000406: Using bytecode reflection optimizer
-2023-04-21 23:50:55,237 INFO BytecodeProviderInitiator [main] HHH000021: Bytecode provider name : bytebuddy
-2023-04-21 23:50:55,324 INFO SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-04-21 23:50:55,356 INFO DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect, version: 2.1.214
-2023-04-21 23:50:55,491 INFO BytecodeProviderInitiator [main] HHH000021: Bytecode provider name : bytebuddy
-2023-04-21 23:50:55,963 INFO JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-21 23:50:56,002 INFO GenerationTargetToDatabase [main] HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
-2023-04-21 23:50:56,004 INFO AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-21 23:50:56,331 INFO QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-04-21 23:50:56,641 INFO StartupInfoLogger [main] Started LanguageH2ServiceTest in 2.669 seconds (process running for 8.861)
-2023-04-21 23:50:57,096 INFO AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-21 23:50:57,096 INFO SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-04-21 23:53:16,007 INFO Version [background-preinit] HV000001: Hibernate Validator 8.0.0.Final
+2023-04-21 23:53:16,033 INFO StartupInfoLogger [main] Starting LanguageH2ServiceTest using Java 19.0.2 with PID 3706 (started by diken in /Users/diken/Documents/intellijDir/meus-livros)
+2023-04-21 23:53:16,036 INFO SpringApplication [main] The following 1 profile is active: "test"
+2023-04-21 23:53:16,345 INFO RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-21 23:53:16,501 INFO RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 148 ms. Found 4 JPA repository interfaces.
+2023-04-21 23:53:16,538 INFO TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor [main] Replacing 'dataSource' DataSource bean with embedded version
+2023-04-21 23:53:16,655 INFO EmbeddedDatabaseFactory [main] Starting embedded database: url='jdbc:h2:mem:c99ca283-f9e2-4535-b30c-f8a8a81a402a;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-04-21 23:53:16,837 INFO LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-21 23:53:16,871 INFO Version [main] HHH000412: Hibernate ORM core version 6.2.1.Final
+2023-04-21 23:53:16,872 INFO Environment [main] HHH000406: Using bytecode reflection optimizer
+2023-04-21 23:53:16,952 INFO BytecodeProviderInitiator [main] HHH000021: Bytecode provider name : bytebuddy
+2023-04-21 23:53:17,035 INFO SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-04-21 23:53:17,066 INFO DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect, version: 2.1.214
+2023-04-21 23:53:17,203 INFO BytecodeProviderInitiator [main] HHH000021: Bytecode provider name : bytebuddy
+2023-04-21 23:53:17,668 INFO JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-21 23:53:17,706 INFO GenerationTargetToDatabase [main] HHH000476: Executing script '[injected ScriptSourceInputNonExistentImpl script]'
+2023-04-21 23:53:17,708 INFO AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 23:53:17,915 INFO QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-04-21 23:53:18,269 INFO StartupInfoLogger [main] Started LanguageH2ServiceTest in 2.533 seconds (process running for 8.601)
+2023-04-21 23:53:18,706 INFO AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 23:53:18,706 INFO SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
