@@ -4,9 +4,11 @@ import com.project.meuslivros.books.entity.Language;
 import com.project.meuslivros.books.repository.LanguageRepository;
 import com.project.meuslivros.books.service.LanguageService;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @DataJpaTest
 public class LanguageH2ServiceTest {
@@ -24,4 +26,14 @@ public class LanguageH2ServiceTest {
         service = new LanguageService(repository);
     }
 
+    @Test
+    public void shouldFindAllLanguages() {
+        service.addLanguage(language);
+
+        Iterable<Language> languageList = service.findAllLanguage();
+
+        Language savedLanguage = languageList.iterator().next();
+
+        assertThat(savedLanguage).isNotNull();
+    }
 }
