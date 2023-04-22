@@ -57,4 +57,14 @@ public class BookH2ServiceTest {
         assertThat(savedBook).isNotNull();
     }
 
+    @Test
+    public void shouldAddBook() {
+        service.addBook(book);
+
+        Iterable<Book> bookList = service.findAllBooks();
+        Book savedBook = bookList.iterator().next();
+
+        assertThat(book).isEqualTo(savedBook);
+    }
+
 }
