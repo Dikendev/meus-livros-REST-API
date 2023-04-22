@@ -3,12 +3,15 @@ package com.project.meuslivros.books.h2.service;
 import com.project.meuslivros.books.entity.Category;
 import com.project.meuslivros.books.repository.CategoryRepository;
 import com.project.meuslivros.books.service.CategoryService;
+import com.project.meuslivros.exception.NotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DataJpaTest
 public class CategoryH2ServiceTest {
@@ -44,6 +47,21 @@ public class CategoryH2ServiceTest {
         Category savedCategory = list.iterator().next();
 
         assertThat(category).isEqualTo(savedCategory);
+    }
+
+    @Test
+    public void shouldDeleteCategory() {
+        assertThrows(NotFoundException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+               Category savedCategory = service.addCategory(category);
+
+               service.deleteCategory(savedCategory.getId());
+               Category foundCategory = service.findCategoryById(savedCategory.getId());
+
+               assertThat(foundCategory).isNotNull();
+            }
+        });
     }
 
 }
