@@ -31,9 +31,20 @@ public class LanguageH2ServiceTest {
         service.addLanguage(language);
 
         Iterable<Language> languageList = service.findAllLanguage();
-
         Language savedLanguage = languageList.iterator().next();
 
         assertThat(savedLanguage).isNotNull();
     }
+
+    @Test
+    public void shouldAddLanguage() {
+        service.addLanguage(language);
+
+        Iterable<Language> languageList = service.findAllLanguage();
+        Language savedLanguage = languageList.iterator().next();
+
+        assertThat(language).isEqualTo(savedLanguage);
+    }
+
+
 }
