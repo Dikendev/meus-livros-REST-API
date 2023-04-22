@@ -75,4 +75,14 @@ public class CategoryH2ServiceTest {
         assertThat(foundCategory.getCategoryName()).isEqualTo("Suspense");
     }
 
+    @Test
+    public void shouldFindCategoryById() {
+        Category savedCategory = service.addCategory(category);
+
+        Category foundCategory = service.findCategoryById(savedCategory.getId());
+
+        assertThat(foundCategory.getId()).isNotNull();
+    }
+
+
 }
