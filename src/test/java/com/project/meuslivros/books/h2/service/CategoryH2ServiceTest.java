@@ -17,22 +17,33 @@ public class CategoryH2ServiceTest {
     private CategoryRepository repository;
     private CategoryService service;
 
+    Category category = new Category();
+
     @BeforeEach
     public void setup() {
+        category.setCategoryName("terror");
+
         service = new CategoryService(repository);
     }
 
     @Test
     public void shouldFindAllCategory() {
-        Category category = new Category();
-        category.setCategoryName("terror");
-
         service.addCategory(category);
 
         Iterable<Category> categoryList = service.findAllCategory();
-
         Category savedCategory = categoryList.iterator().next();
 
         assertThat(savedCategory).isNotNull();
     }
+
+    @Test
+    public void shouldAddCategory() {
+        service.addCategory(category);
+
+        Iterable<Category> list = service.findAllCategory();
+        Category savedCategory = list.iterator().next();
+
+        assertThat(category).isEqualTo(savedCategory);
+    }
+
 }
