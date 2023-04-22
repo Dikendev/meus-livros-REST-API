@@ -10,6 +10,8 @@ import org.junit.jupiter.api.function.Executable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import java.util.UUID;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -82,5 +84,17 @@ public class LanguageH2ServiceTest {
         Language foundLanguage = service.findLanguageById(savedLanguage.getId());
 
         assertThat(foundLanguage.getId()).isNotNull();
+    }
+
+    @Test
+    public void shouldNotFindLanguageById() {
+        assertThrows(NotFoundException.class, new Executable() {
+            @Override
+            public void execute() throws Throwable {
+                Language foundLanguage = service.findLanguageById(UUID.randomUUID());
+
+                assertThat(foundLanguage).isNotNull();
+            }
+        });
     }
 }
