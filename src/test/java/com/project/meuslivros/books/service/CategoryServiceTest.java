@@ -2,6 +2,7 @@ package com.project.meuslivros.books.service;
 
 import com.project.meuslivros.books.entity.Category;
 import com.project.meuslivros.books.repository.CategoryRepository;
+import com.project.meuslivros.exception.NotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,6 +15,7 @@ import static org.mockito.Mockito.*;
 
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
 import java.util.UUID;
 
 
@@ -67,6 +69,19 @@ public class CategoryServiceTest {
         assertThat(captureCategory).isEqualTo(category);
     }
 
+    @Test
+    void canDeleteCategory() throws NotFoundException {
+        //Given
+        UUID categoryId = UUID.randomUUID();
+        category.setId(categoryId);
+        when(repository.findById(categoryId)).thenReturn(Optional.of(category));
+
+        //When
+        serviceTest.deleteCategory(categoryId);
+
+        //Then
+        verify(repository,times(1)).deleteById(categoryId);
+    }
 
 
 }
