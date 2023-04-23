@@ -72,15 +72,13 @@ public class CategoryServiceTest {
     @Test
     void canDeleteCategory() throws NotFoundException {
         //Given
-        UUID categoryId = UUID.randomUUID();
-        category.setId(categoryId);
-        when(repository.findById(categoryId)).thenReturn(Optional.of(category));
+        when(repository.findById(category.getId())).thenReturn(Optional.of(category));
 
         //When
-        serviceTest.deleteCategory(categoryId);
+        serviceTest.deleteCategory(category.getId());
 
         //Then
-        verify(repository,times(1)).deleteById(categoryId);
+        verify(repository,times(1)).deleteById(category.getId());
     }
 
 
