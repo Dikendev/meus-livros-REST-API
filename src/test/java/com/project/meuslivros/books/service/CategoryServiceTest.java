@@ -81,5 +81,20 @@ public class CategoryServiceTest {
         verify(repository,times(1)).deleteById(category.getId());
     }
 
+    @Test
+    void canUpdateCategory() {
+
+        serviceTest.addCategory(category);
+        category.setCategoryName("Updated Category Name");
+
+        ArgumentCaptor<Category> categoryArgumentCaptor = ArgumentCaptor.forClass(Category.class);
+        verify(repository, times(1)).save(categoryArgumentCaptor.capture());
+
+        Category captureCategory = categoryArgumentCaptor.getValue();
+
+        assertThat(captureCategory.getId()).isNotNull();
+        assertThat(captureCategory.getId()).isEqualTo(category.getId());
+        assertThat(captureCategory.getCategoryName()).isEqualTo("Updated Category Name");
+    }
 
 }
