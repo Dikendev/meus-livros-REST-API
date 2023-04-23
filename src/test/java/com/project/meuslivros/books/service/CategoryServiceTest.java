@@ -43,6 +43,19 @@ public class CategoryServiceTest {
     }
 
     @Test
+    void canFindCategoryById() {
+
+        when(repository.findById(category.getId())).thenReturn(Optional.of(category));
+        Category capturedCategory = serviceTest.findCategoryById(category.getId());
+
+        assertThat(capturedCategory).isNotNull();
+        assertThat(capturedCategory).isEqualTo(category);
+        assertThat(capturedCategory.getId()).isEqualTo(category.getId());
+
+        verify(repository, times(1)).findById(category.getId());
+    }
+
+    @Test
     void canAddCategory() {
         serviceTest.addCategory(category);
 
